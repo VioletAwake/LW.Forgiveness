@@ -1,0 +1,41 @@
+body {
+    background-image: url(wall.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: auto;
+}
+
+.crosswords-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    position: relative;
+    border: 10px solid black;
+    margin: auto;
+    background-color: rgb(255 255 255 / 55%);
+}
+
+.word {
+    display: flex;
+    position: relative;
+    gap: 2px;
+    margin: 5px;
+}
+
+.mathLetter {
+    position: relative;
+    left: 30px;
+    color: black;
+}
+
+.letter {
+    position: relative;
+    border: 2px solid black;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 20px;
+    color: black;
+}
