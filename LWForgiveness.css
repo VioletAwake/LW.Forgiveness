@@ -39,3 +39,16 @@ body {
     margin-top: 20px;
     color: black;
 }
+
+#help {
+    display: none;
+    font-size: 25px;
+    color: white;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+#help a:link, a:visited{
+    text-decoration: none;
+    color: white;
+}

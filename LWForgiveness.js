@@ -1,7 +1,9 @@
-const hiddenMessage = "TU VEUX TE PARDONNER ? VA A LA PUTAIN DE MESSE !";
+const hiddenMessage ="TU VEUX TE PARDONNER ? ALORS VA A L'EGLISE !";
 const crosswordLetters = document.querySelectorAll(".letter");
 
-const filledLetters = [0, 1, 2, 13, 14, 17, 20, 33, 34, 36];
+const filledLetters = [0, 1, 2, 13, 14, 17, 25, 27, 34];
+let errorCount = 0;
+const maxErrors = 5;
 
 function checkLetterValidity(inputLetter, index) {
   if (filledLetters.includes(index)) {
@@ -19,8 +21,6 @@ function checkLetterValidity(inputLetter, index) {
     }
   }
 
-  const correctLetter = hiddenMessage[index];
-  return inputLetter === correctLetter;
 }
 
 crosswordLetters.forEach((letter) => {
@@ -42,6 +42,11 @@ function handleLetterInput(event) {
 
   if (isValid) {
     event.target.contentEditable = "false";
+  } else {
+    errorCount++;
+    if (errorCount >= maxErrors) {
+      document.getElementById("help").style.display = "block";
+    }
   }
 
   if (isValid) {
@@ -60,6 +65,14 @@ function handleLetterInput(event) {
 
   if (allLettersFilled()) {
     console.log("Mon nom est John Peaks");
+    const backgroundMusic = document.getElementById("noir");
+    backgroundMusic.pause();
+
+    setTimeout(() => {
+        const knockDoor = document.getElementById("door");
+        knockDoor.volume = 1.0;
+        knockDoor.play();
+    }, 3000);
   }
 }
 
@@ -70,3 +83,8 @@ function allLettersFilled() {
 function clearLetter(event) {
     event.target.textContent = "";
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+    const backgroundMusic = document.getElementById("noir");
+    backgroundMusic.play();
+})
