@@ -1,5 +1,14 @@
 const hiddenMessage ="TU VEUX TE PARDONNER ? ALORS VA A L'EGLISE !";
 const crosswordLetters = document.querySelectorAll(".letter");
+const backgroundMusic = document.getElementById("noir");
+const crossword = document.getElementById("crosswords-container");
+const card = document.getElementById("card");
+
+card.addEventListener('click', () => {
+  crossword.style.display = 'flex';
+  backgroundMusic.play();
+  card.style.display= 'none';
+})
 
 const filledLetters = [0, 1, 2, 13, 14, 17, 25, 27, 34];
 let errorCount = 0;
@@ -83,8 +92,3 @@ function allLettersFilled() {
 function clearLetter(event) {
     event.target.textContent = "";
 }
-
-window.addEventListener("DOMContentLoaded", () => {
-    const backgroundMusic = document.getElementById("noir");
-    backgroundMusic.play();
-})

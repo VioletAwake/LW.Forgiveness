@@ -5,6 +5,14 @@ body {
     background-position: auto;
 }
 
+#card {
+    margin-top: 5%;
+    margin-left: 18%;
+    width: auto;
+    border: solid 10px black;
+    cursor: pointer;
+}
+
 .crosswords-container {
     display: flex;
     flex-direction: column;
