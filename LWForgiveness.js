@@ -83,6 +83,11 @@ function handleLetterInput(event) {
     }, 3000);
 
     setTimeout(() => {
+      const phone = document.getElementById("phone");
+      phone.style.display = "block";
+    }, 5000);
+
+    setTimeout(() => {
       const videoForgiveness = document.getElementById("LWForgiveness");
       videoForgiveness.style.display = "block";
       videoForgiveness.play();
